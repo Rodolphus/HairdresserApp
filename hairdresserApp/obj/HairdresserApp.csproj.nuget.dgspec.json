@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mehmet\\source\\repos\\hairdresserApp\\HairdresserApp\\HairdresserApp.csproj": {}
+    "C:\\Users\\mehmet\\source\\repos\\hairdresserApp\\HairdresserApp\\hairdresserApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mehmet\\source\\repos\\hairdresserApp\\HairdresserApp\\HairdresserApp.csproj": {
+    "C:\\Users\\mehmet\\source\\repos\\hairdresserApp\\HairdresserApp\\hairdresserApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mehmet\\source\\repos\\hairdresserApp\\HairdresserApp\\HairdresserApp.csproj",
-        "projectName": "HairdresserApp",
-        "projectPath": "C:\\Users\\mehmet\\source\\repos\\hairdresserApp\\HairdresserApp\\HairdresserApp.csproj",
+        "projectUniqueName": "C:\\Users\\mehmet\\source\\repos\\hairdresserApp\\HairdresserApp\\hairdresserApp.csproj",
+        "projectName": "hairdresserApp",
+        "projectPath": "C:\\Users\\mehmet\\source\\repos\\hairdresserApp\\HairdresserApp\\hairdresserApp.csproj",
         "packagesPath": "C:\\Users\\mehmet\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\mehmet\\source\\repos\\hairdresserApp\\HairdresserApp\\obj\\",
         "projectStyle": "PackageReference",

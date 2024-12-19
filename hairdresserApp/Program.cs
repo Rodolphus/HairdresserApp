@@ -7,7 +7,9 @@ var connectionString = builder.Configuration.GetConnectionString("HairdresserApp
 
 builder.Services.AddDbContext<HairdresserAppContext>(options => options.UseSqlServer(connectionString));
 
-builder.Services.AddDefaultIdentity<HairdresserAppUser>(options => options.SignIn.RequireConfirmedAccount = false).AddEntityFrameworkStores<HairdresserAppContext>();
+builder.Services.AddDefaultIdentity<HairdresserAppUser>(options => options.SignIn.RequireConfirmedAccount = false)
+    .AddRoles<IdentityRole>()
+    .AddEntityFrameworkStores<HairdresserAppContext>();
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -44,5 +46,37 @@ app.MapControllerRoute(
     .WithStaticAssets();
 
 app.MapRazorPages();
+
+using (var scope = app.Services.CreateScope())
+{
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    var roles = new[] { "Admin", "User" };
+
+    foreach (var role in roles)
+    {
+        if(!await roleManager.RoleExistsAsync(role))
+            await roleManager.CreateAsync(new IdentityRole(role));
+    }
+}
+
+using (var scope = app.Services.CreateScope())
+{
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<HairdresserAppUser>>();
+    string firtName = "Mehmet Akif";
+    string lastName = "Turhan";
+    string email = "b181210090@sakarya.edu.tr";
+    string password = "sau";
+
+    if (await userManager.FindByEmailAsync(email) == null)
+    {
+        var user = new HairdresserAppUser();
+        user.FirstName = firtName;
+        user.LastName = lastName;
+        user.UserName = email;
+        user.Email = email;
+        await userManager.CreateAsync(user, password);
+        await userManager.AddToRoleAsync(user, "Admin");
+    }
+}
 
 app.Run();
