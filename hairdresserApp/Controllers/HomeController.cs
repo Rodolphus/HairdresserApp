@@ -1,16 +1,22 @@
 using System.Diagnostics;
+using HairdresserApp.Areas.Identity.Data;
 using HairdresserApp.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HairdresserApp.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly UserManager<HairdresserAppUser> _userManager;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, UserManager<HairdresserAppUser> userManager)
         {
             _logger = logger;
+            _userManager = userManager;
         }
 
         public IActionResult Index()
