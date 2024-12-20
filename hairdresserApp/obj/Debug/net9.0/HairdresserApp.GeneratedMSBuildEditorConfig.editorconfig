@@ -15,8 +15,8 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
-build_property.RootNamespace = hairdresserApp
-build_property.RootNamespace = hairdresserApp
+build_property.RootNamespace = HairdresserApp
+build_property.RootNamespace = HairdresserApp
 build_property.ProjectDir = C:\Users\mehmet\source\repos\hairdresserApp\HairdresserApp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
@@ -86,4 +86,4 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/mehmet/source/repos/hairdresserApp/HairdresserApp/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = b-q86dpyue06
+build_metadata.AdditionalFiles.CssScope = b-rcxr8umppy
