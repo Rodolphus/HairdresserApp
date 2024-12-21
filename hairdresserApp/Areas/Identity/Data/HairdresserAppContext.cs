@@ -1,4 +1,5 @@
 ﻿using HairdresserApp.Areas.Identity.Data;
+using HairdresserApp.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -11,6 +12,8 @@ public class HairdresserAppContext : IdentityDbContext<HairdresserAppUser>
         : base(options)
     {
     }
+
+    public DbSet<Location> Locations { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
