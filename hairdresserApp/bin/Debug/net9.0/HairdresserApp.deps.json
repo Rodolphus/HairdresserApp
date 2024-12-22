@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v9.0": {
-      "hairdresserApp/1.0.0": {
+      "HairdresserApp/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "9.0.0",
           "Microsoft.AspNetCore.Identity.UI": "9.0.0",
@@ -16,7 +16,7 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "9.0.0"
         },
         "runtime": {
-          "hairdresserApp.dll": {}
+          "HairdresserApp.dll": {}
         }
       },
       "Azure.Core/1.38.0": {
@@ -2052,7 +2052,7 @@
     }
   },
   "libraries": {
-    "hairdresserApp/1.0.0": {
+    "HairdresserApp/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

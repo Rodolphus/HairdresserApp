@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace HairdresserApp.Controllers
 {
-    //[Authorize(Roles = "Admin")]
     [Authorize]
     public class HomeController : Controller
     {

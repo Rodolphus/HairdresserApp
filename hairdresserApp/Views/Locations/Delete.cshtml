@@ -1,0 +1,13 @@
+﻿@model HairdresserApp.Models.Location
+@{
+	ViewData["Title"] = "Şube Sil";
+}
+
+<h3>Şube Sil</h3>
+
+<p>@Model.Address adresindeki @Model.Name şubenizi silmek istediğinize emin misiniz?</p>
+
+<form asp-action="Delete" method="post">
+	<input type="hidden" asp-for="Id"/>
+	<input type="submit" class="btn btn-danger" value="Delete"/>
+</form>

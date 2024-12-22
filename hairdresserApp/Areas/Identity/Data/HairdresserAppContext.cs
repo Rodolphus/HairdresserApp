@@ -14,6 +14,9 @@ public class HairdresserAppContext : IdentityDbContext<HairdresserAppUser>
     }
 
     public DbSet<Location> Locations { get; set; }
+    public DbSet<Employee> Employees { get; set; }
+    public DbSet<Service> Services { get; set; }
+    public DbSet<Appointment> Appointments { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
     {

@@ -1,8 +1,8 @@
 {
   "Files": [
     {
-      "Id": "C:\\Users\\mehmet\\source\\repos\\hairdresserApp\\HairdresserApp\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\hairdresserApp.bundle.scp.css",
-      "PackagePath": "staticwebassets\\hairdresserApp.ra4zzinxl6.bundle.scp.css"
+      "Id": "C:\\Users\\mehmet\\source\\repos\\hairdresserApp\\HairdresserApp\\obj\\Debug\\net9.0\\scopedcss\\projectbundle\\HairdresserApp.bundle.scp.css",
+      "PackagePath": "staticwebassets\\HairdresserApp.g6hag5xviu.bundle.scp.css"
     },
     {
       "Id": "C:\\Users\\mehmet\\source\\repos\\hairdresserApp\\HairdresserApp\\wwwroot\\css\\site.css",
@@ -257,24 +257,24 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.map"
     },
     {
-      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.hairdresserApp.props",
-      "PackagePath": "build\\hairdresserApp.props"
-    },
-    {
-      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.hairdresserApp.props",
-      "PackagePath": "buildMultiTargeting\\hairdresserApp.props"
-    },
-    {
-      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.hairdresserApp.props",
-      "PackagePath": "buildTransitive\\hairdresserApp.props"
-    },
-    {
-      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.hairdresserApp.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.HairdresserApp.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
-      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.hairdresserApp.Microsoft.AspNetCore.StaticWebAssets.props",
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.HairdresserApp.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.build.HairdresserApp.props",
+      "PackagePath": "build\\HairdresserApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildMultiTargeting.HairdresserApp.props",
+      "PackagePath": "buildMultiTargeting\\HairdresserApp.props"
+    },
+    {
+      "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.buildTransitive.HairdresserApp.props",
+      "PackagePath": "buildTransitive\\HairdresserApp.props"
     }
   ],
   "ElementsToRemove": []
