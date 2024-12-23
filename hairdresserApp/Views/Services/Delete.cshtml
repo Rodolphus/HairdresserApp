@@ -1,0 +1,14 @@
+﻿@model HairdresserApp.Models.Service
+@{
+	ViewData["Title"] = "Hizmet Sil";
+}
+
+<h3>Hizmet Sil</h3>
+
+<p>@Model.Name hizmetinizi silmek istediğinize emin misiniz?</p>
+
+<form asp-action="Delete" method="post">
+	<input type="hidden" asp-for="Id"/>
+	<input type="submit" class="btn btn-danger" value="Delete"/>
+	<a asp-action="Index" class="btn btn-primary">Cancel</a>
+</form>

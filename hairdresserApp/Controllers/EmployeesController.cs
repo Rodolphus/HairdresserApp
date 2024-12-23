@@ -3,80 +3,82 @@ using HairdresserApp.Models;
 using HairdresserApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace HairdresserApp.Controllers
 {
     [Authorize(Roles = "Admin")]
-    public class LocationsController : Controller
+    public class EmployeesController : Controller
     {
         private readonly HairdresserAppContext _context;
-        public LocationsController(HairdresserAppContext context)
+        public EmployeesController(HairdresserAppContext context)
         {
             _context = context;
         }
 
         public async Task<IActionResult> Index()
         {
-            var location = await _context.Locations.Include(l => l.Employees).ToListAsync();
-            return View(location);
+            var employee = await _context.Employees.Include(l => l.Location).ToListAsync();
+            return View(employee);
         }
 
         public IActionResult Create()
         {
+            ViewData["Locations"] = new SelectList(_context.Locations, "Id", "Name");
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("Id, Name, Address")] Location location)
+        public async Task<IActionResult> Create([Bind("Id, FirstName, LastName, LocationId")] Employee employee)
         {
             if (ModelState.IsValid)
             {
-                _context.Locations.Add(location);
+                _context.Employees.Add(employee);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
-            return View(location);
+            return View(employee);
         }
 
         public async Task<IActionResult> Edit(int id)
         {
-            var location = await _context.Locations.FirstOrDefaultAsync(x=>x.Id == id);
-            return View(location);
+            ViewData["Locations"] = new SelectList(_context.Locations, "Id", "Name");
+            var employee = await _context.Employees.FirstOrDefaultAsync(x => x.Id == id);
+            return View(employee);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, [Bind("Id, Name, Address")] Location location)
+        public async Task<IActionResult> Edit(int id, [Bind("Id, FirstName, LastName, LocationId")] Employee employee)
         {
             if (ModelState.IsValid)
             {
-                _context.Update(location);
+                _context.Update(employee);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
-            return View(location);
+            return View(employee);
         }
 
         public async Task<IActionResult> Delete(int id)
         {
-            var location = await _context.Locations.FirstOrDefaultAsync(x => x.Id == id);
-            return View(location);
+            var employee = await _context.Employees.FirstOrDefaultAsync(x => x.Id == id);
+            return View(employee);
         }
 
         [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var location = await _context.Locations.FindAsync(id);
+            var employee = await _context.Employees.FindAsync(id);
 
-            if (location != null)
+            if (employee != null)
             {
-                _context.Locations.Remove(location);
+                _context.Employees.Remove(employee);
                 await _context.SaveChangesAsync();
             }
 
             return RedirectToAction("Index");
         }
     }
-
 }

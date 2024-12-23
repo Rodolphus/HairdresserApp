@@ -12,6 +12,7 @@
 		<tr>
 			<th>Ad</th>
 			<th>Adres</th>
+			<th>Çalışan Sayısı</th>
 			<th>İşlemler</th>
 		</tr>
 	</thead>
@@ -20,6 +21,7 @@
 			<tr>
 				<td>@location.Name</td>
 				<td>@location.Address</td>
+				<td>@location.Employees?.Count</td>
 				<td>
 					<a asp-action="Edit" asp-route-id="@location.Id">Düzenle</a>
 					<a asp-action="Delete" asp-route-id="@location.Id">Sil</a>

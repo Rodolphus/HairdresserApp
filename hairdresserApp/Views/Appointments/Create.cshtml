@@ -1,0 +1,63 @@
+﻿@model HairdresserApp.Models.Appointment
+@{
+	ViewData["Title"] = "Randevu Ekle";
+}
+
+<h3>Randevu Ekle</h3>
+
+<form asp-action="Create" method="post">
+	<div class="form-group">
+		<label for="UserId">User</label>
+		<select asp-for="UserId" asp-items="ViewBag.Users" class="form-control"></select>
+	</div>
+	<div class="form-group">
+		<label for="ServiceId">Service</label>
+		<select asp-for="ServiceId" asp-items="ViewBag.Services" class="form-control"></select>
+	</div>
+	<div class="form-group">
+		<label for="LocationId">Service</label>
+		<select asp-for="LocationId" asp-items="ViewBag.Locations" class="form-control"></select>
+	</div>
+	<div class="form-group">
+		<label for="EmployeeId">Employee</label>
+		<select asp-for="EmployeeId" name="EmployeeId" class="form-control">
+            <option value="">Şube seçiniz.</option>
+		</select>
+	</div>
+	<button type="submit" class="btn btn-primary">Submit</button>
+	<a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
+
+<script>
+    document.getElementById("LocationId").addEventListener("change", function () {
+        const locationId = this.value;
+
+        if (!locationId) {
+            document.getElementById("EmployeeId").innerHTML = '<option value="">Şube seçiniz.</option>';
+            return;
+        }
+
+        fetch(`/api/employees/by-location/${locationId}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Çalışan bilgileri alınamadı.");
+                }
+                return response.json();
+            })
+            .then(data => {
+                const employeeDropdown = document.getElementById("EmployeeId");
+                employeeDropdown.innerHTML = "";
+
+                data.forEach(employee => {
+                    const option = document.createElement("option");
+                    option.value = employee.id;
+                    option.textContent = `${employee.firstName} ${employee.lastName}`;
+                    employeeDropdown.appendChild(option);
+                });
+            })
+            .catch(error => {
+                console.error("Hata:", error);
+                document.getElementById("EmployeeId").innerHTML = '<option value="">Çalışanlar yüklenemedi.</option>';
+            });
+    });
+</script>

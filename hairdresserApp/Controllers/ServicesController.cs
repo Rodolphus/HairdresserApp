@@ -7,18 +7,18 @@ using Microsoft.AspNetCore.Authorization;
 namespace HairdresserApp.Controllers
 {
     [Authorize(Roles = "Admin")]
-    public class LocationsController : Controller
+    public class ServicesController : Controller
     {
         private readonly HairdresserAppContext _context;
-        public LocationsController(HairdresserAppContext context)
+        public ServicesController(HairdresserAppContext context)
         {
             _context = context;
         }
 
         public async Task<IActionResult> Index()
         {
-            var location = await _context.Locations.Include(l => l.Employees).ToListAsync();
-            return View(location);
+            var service = await _context.Services.ToListAsync();
+            return View(service);
         }
 
         public IActionResult Create()
@@ -27,51 +27,51 @@ namespace HairdresserApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("Id, Name, Address")] Location location)
+        public async Task<IActionResult> Create([Bind("Id, Name, Price, ProcessTimeInMinutes")] Service service)
         {
             if (ModelState.IsValid)
             {
-                _context.Locations.Add(location);
+                _context.Services.Add(service);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
-            return View(location);
+            return View(service);
         }
 
         public async Task<IActionResult> Edit(int id)
         {
-            var location = await _context.Locations.FirstOrDefaultAsync(x=>x.Id == id);
-            return View(location);
+            var service = await _context.Services.FirstOrDefaultAsync(x => x.Id == id);
+            return View(service);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, [Bind("Id, Name, Address")] Location location)
+        public async Task<IActionResult> Edit(int id, [Bind("Id, Name, Price, ProcessTimeInMinutes")] Service service)
         {
             if (ModelState.IsValid)
             {
-                _context.Update(location);
+                _context.Update(service);
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Index");
             }
 
-            return View(location);
+            return View(service);
         }
 
         public async Task<IActionResult> Delete(int id)
         {
-            var location = await _context.Locations.FirstOrDefaultAsync(x => x.Id == id);
-            return View(location);
+            var service = await _context.Services.FirstOrDefaultAsync(x => x.Id == id);
+            return View(service);
         }
 
         [HttpPost, ActionName("Delete")]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var location = await _context.Locations.FindAsync(id);
+            var service = await _context.Services.FindAsync(id);
 
-            if (location != null)
+            if (service != null)
             {
-                _context.Locations.Remove(location);
+                _context.Services.Remove(service);
                 await _context.SaveChangesAsync();
             }
 

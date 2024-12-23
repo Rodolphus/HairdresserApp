@@ -6,10 +6,14 @@ namespace HairdresserApp.Models
     public class Appointment
     {
         public int Id { get; set; }
-        public string CustomerId { get; set; }
+        public string UserId { get; set; }
 
-        [ForeignKey("CustomerId")]
-        public HairdresserAppUser Customer { get; set; }
+        [ForeignKey("UserId")]
+        public HairdresserAppUser User { get; set; }
+        public int LocationId { get; set; }
+
+        [ForeignKey("LocationId")]
+        public Location Location { get; set; }
         public int EmployeeId { get; set; }
 
         [ForeignKey("EmployeeId")]

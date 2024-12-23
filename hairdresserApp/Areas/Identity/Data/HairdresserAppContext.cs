@@ -3,6 +3,7 @@ using HairdresserApp.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection.Emit;
 
 namespace HairdresserApp.Data;
 
@@ -21,8 +22,37 @@ public class HairdresserAppContext : IdentityDbContext<HairdresserAppUser>
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
-        // Customize the ASP.NET Identity model and override the defaults if needed.
-        // For example, you can rename the ASP.NET Identity table names and more.
-        // Add your customizations after calling base.OnModelCreating(builder);
+
+        builder.Entity<Employee>()
+            .HasOne(e => e.Location)
+            .WithMany(l => l.Employees)
+            .HasForeignKey(e => e.LocationId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        builder.Entity<Appointment>()
+            .HasOne(a => a.User)
+            .WithMany()
+            .HasForeignKey(a => a.UserId)
+            .OnDelete(DeleteBehavior.NoAction);
+
+        builder.Entity<Appointment>()
+            .HasOne(a => a.Location)
+            .WithMany()
+            .HasForeignKey(a => a.LocationId)
+            .OnDelete(DeleteBehavior.NoAction);
+
+        builder.Entity<Appointment>()
+            .HasOne(a => a.Employee)
+            .WithMany()
+            .HasForeignKey(a => a.EmployeeId)
+            .OnDelete(DeleteBehavior.NoAction);
+
+        builder.Entity<Appointment>()
+            .HasOne(a => a.Service)
+            .WithMany()
+            .HasForeignKey(a => a.ServiceId)
+            .OnDelete(DeleteBehavior.NoAction);
+
+
     }
 }
