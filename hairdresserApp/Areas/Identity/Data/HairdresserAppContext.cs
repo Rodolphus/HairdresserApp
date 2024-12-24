@@ -15,8 +15,9 @@ public class HairdresserAppContext : IdentityDbContext<HairdresserAppUser>
     }
 
     public DbSet<Location> Locations { get; set; }
-    public DbSet<Employee> Employees { get; set; }
     public DbSet<Service> Services { get; set; }
+    public DbSet<Employee> Employees { get; set; }
+    public DbSet<EmployeeService> EmployeeServices { get; set; }
     public DbSet<Appointment> Appointments { get; set; }
 
     protected override void OnModelCreating(ModelBuilder builder)
@@ -27,32 +28,19 @@ public class HairdresserAppContext : IdentityDbContext<HairdresserAppUser>
             .HasOne(e => e.Location)
             .WithMany(l => l.Employees)
             .HasForeignKey(e => e.LocationId)
-            .OnDelete(DeleteBehavior.Cascade);
+            .OnDelete(DeleteBehavior.SetNull); //Might be Cascade
 
-        builder.Entity<Appointment>()
-            .HasOne(a => a.User)
-            .WithMany()
-            .HasForeignKey(a => a.UserId)
-            .OnDelete(DeleteBehavior.NoAction);
+        builder.Entity<EmployeeService>().HasKey(es => new { es.EmployeeId, es.ServiceId });
 
-        builder.Entity<Appointment>()
-            .HasOne(a => a.Location)
-            .WithMany()
-            .HasForeignKey(a => a.LocationId)
-            .OnDelete(DeleteBehavior.NoAction);
+        builder.Entity<EmployeeService>()
+            .HasOne(e => e.Employee)
+            .WithMany(es => es.EmployeeServices)
+            .HasForeignKey(e => e.EmployeeId);
 
-        builder.Entity<Appointment>()
-            .HasOne(a => a.Employee)
-            .WithMany()
-            .HasForeignKey(a => a.EmployeeId)
-            .OnDelete(DeleteBehavior.NoAction);
-
-        builder.Entity<Appointment>()
-            .HasOne(a => a.Service)
-            .WithMany()
-            .HasForeignKey(a => a.ServiceId)
-            .OnDelete(DeleteBehavior.NoAction);
-
+        builder.Entity<EmployeeService>()
+            .HasOne(s => s.Service)
+            .WithMany(es => es.EmployeeServices)
+            .HasForeignKey(s => s.ServiceId);
 
     }
 }

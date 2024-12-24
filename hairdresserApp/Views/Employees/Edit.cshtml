@@ -1,22 +1,35 @@
 ﻿@model HairdresserApp.Models.Employee
 @{
-	ViewData["Title"] = "Çalışanı Düzenle";
+	ViewData["Title"] = "Çalışan Düzenle";
 }
 
-<h3>Çalışanı Düzenle</h3>
+<h3>Çalışan Düzenle</h3>
 
 <form asp-action="Edit" method="post">
 	<div class="form-group">
-		<label for="FirstName">First Name</label>
+		<label for="FirstName">FirstName</label>
 		<input type="text" class="form-control" asp-for="FirstName" />
 	</div>
 	<div class="form-group">
-		<label for="LastName">Last Name</label>
+		<label for="LastName">LastName</label>
 		<input type="text" class="form-control" asp-for="LastName" />
 	</div>
 	<div class="form-group">
 		<label for="LocationId">Location</label>
 		<select asp-for="LocationId" asp-items="ViewBag.Locations" class="form-control"></select>
+	</div>
+	<div class="form-group">
+		<label>Hizmetler</label>
+		<div>
+			@foreach (var service in ViewData["Services"] as List<HairdresserApp.Models.Service>)
+			{
+				var isChecked = ((List<int>)ViewData["SelectedServices"]).Contains(service.Id);
+				<div class="form-check">
+					<input type="checkbox" class="form-check-input" name="selectedServices" value="@service.Id" @(isChecked ? "checked" : "") />
+					<label class="form-check-label">@service.Name</label>
+				</div>
+			}
+		</div>
 	</div>
 	<button type="submit" class="btn btn-primary">Submit</button>
 	<a asp-action="Index" class="btn btn-secondary">Cancel</a>

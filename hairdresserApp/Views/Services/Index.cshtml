@@ -13,6 +13,7 @@
 			<th>Hizmet</th>
 			<th>Fiyat</th>
 			<th>Hizmet Süresi</th>
+			<th>Hizmeti Verebilen Çalışanlar</th>
 			<th>İşlemler</th>
 		</tr>
 	</thead>
@@ -22,6 +23,12 @@
 				<td>@service.Name</td>
 				<td>@service.Price TL</td>
 				<td>@service.ProcessTimeInMinutes dk</td>
+				<td>
+					@foreach (var employee in service.EmployeeServices)
+					{
+						@employee.Employee.FirstName @employee.Employee.LastName
+					}
+				</td>
 				<td>
 					<a asp-action="Edit" asp-route-id="@service.Id">Düzenle</a>
 					<a asp-action="Delete" asp-route-id="@service.Id">Sil</a>

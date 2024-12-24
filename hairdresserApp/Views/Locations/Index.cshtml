@@ -12,6 +12,7 @@
 		<tr>
 			<th>Ad</th>
 			<th>Adres</th>
+			<th>Çalışma Saatleri</th>
 			<th>Çalışan Sayısı</th>
 			<th>İşlemler</th>
 		</tr>
@@ -21,6 +22,7 @@
 			<tr>
 				<td>@location.Name</td>
 				<td>@location.Address</td>
+				<td>@location.OpeningTime.ToString(@"hh\:mm") - @location.ClosingTime.ToString(@"hh\:mm")</td>
 				<td>@location.Employees?.Count</td>
 				<td>
 					<a asp-action="Edit" asp-route-id="@location.Id">Düzenle</a>

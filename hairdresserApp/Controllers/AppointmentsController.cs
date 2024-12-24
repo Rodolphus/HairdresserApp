@@ -19,22 +19,53 @@ namespace HairdresserApp.Controllers
         public async Task<IActionResult> Index()
         {
             var appointment = await _context.Appointments
-                                            .Include(u => u.User)
-                                            .Include(e => e.Employee)
-                                            .Include(l => l.Location)
-                                            .Include(s => s.Service).ToListAsync();
+                                        .Include(s => s.Service)
+                                        .Include(e => e.Employee)
+                                        .ThenInclude(e => e.Location)
+                                        .Include(u => u.User)
+                                        .ToListAsync();
+
             return View(appointment);
         }
 
         public IActionResult Create()
         {
-            ViewData["Users"] = new SelectList(_context.Users, "Id", "FirstName", "LastName", "Email");
-            ViewData["Services"] = new SelectList(_context.Services, "Id", "Name", "Price", "ProcessTimeInMinutes");
-            ViewData["Locations"] = new SelectList(_context.Locations, "Id", "Name", "Address");
+            ViewData["Users"] = new SelectList(_context.Users
+                .Select(u => new { u.Id, Info = u.FirstName + " " + u.LastName + ", " + u.Email }),
+                "Id",
+                "Info"
+            );
+            ViewData["Services"] = new SelectList(_context.Services, "Id", "Name");
+            ViewData["Locations"] = new SelectList(_context.Locations, "Id", "Name");
             return View();
         }
 
-        
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("ServiceId, EmployeeId, UserId, AppointmentDate")] Appointment appointment)
+        {
+            if (ModelState.IsValid)
+            {
+                appointment.CreatedDate = DateTime.Now;
+                appointment.Confirmed = false;
+
+                _context.Appointments.Add(appointment);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Index");
+            }
+
+            ViewData["Users"] = new SelectList(_context.Users
+                .Select(u => new { u.Id, Info = u.FirstName + " " + u.LastName + ", " + u.Email }),
+                "Id",
+                "Info"
+            );
+            ViewData["Services"] = new SelectList(_context.Services, "Id", "Name");
+            ViewData["Locations"] = new SelectList(_context.Locations, "Id", "Name");
+            return View();
+        }
+
+
 
     }
+
 }

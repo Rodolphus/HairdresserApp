@@ -16,16 +16,17 @@ namespace HairdresserApp.Controllers
             _context = context;
         }
 
-        [HttpGet("by-location/{locationId}")]
-        public async Task<IActionResult> GetEmployeesByLocation(int locationId)
+        [HttpGet("by-location-and-service/{locationId}/{serviceId}")]
+        public async Task<IActionResult> GetEmployeesByLocationAndService(int locationId, int serviceId)
         {
             var employees = await _context.Employees
-                                          .Where(e => e.LocationId == locationId)
-                                          .Select(e => new { e.Id, e.FirstName, e.LastName })
-                                          .ToListAsync();
+                                        .Include(es => es.EmployeeServices)
+                                        .Where(e => e.LocationId == locationId && e.EmployeeServices.Any(s => s.ServiceId == serviceId))
+                                        .Select(e => new { e.Id, e.FirstName, e.LastName })
+                                        .ToListAsync();
 
             if (!employees.Any())
-                return NotFound(new { Message = "Bu şubeye ait çalışan bulunamadı." });
+                return NotFound(new { Message = "Seçili şubede seçili hizmeti veren çalışan bulunamadı." });
 
             return Ok(employees);
         }

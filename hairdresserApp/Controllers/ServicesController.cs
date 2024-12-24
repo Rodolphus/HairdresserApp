@@ -17,7 +17,10 @@ namespace HairdresserApp.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var service = await _context.Services.ToListAsync();
+            var service = await _context.Services
+                                        .Include(es => es.EmployeeServices)
+                                        .ThenInclude(e => e.Employee)
+                                        .ToListAsync();
             return View(service);
         }
 

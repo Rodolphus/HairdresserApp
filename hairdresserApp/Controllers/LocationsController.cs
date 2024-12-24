@@ -17,7 +17,7 @@ namespace HairdresserApp.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var location = await _context.Locations.Include(l => l.Employees).ToListAsync();
+            var location = await _context.Locations.Include(e => e.Employees).ToListAsync();
             return View(location);
         }
 
@@ -27,7 +27,7 @@ namespace HairdresserApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create([Bind("Id, Name, Address")] Location location)
+        public async Task<IActionResult> Create([Bind("Id, Name, Address, OpeningTime, ClosingTime")] Location location)
         {
             if (ModelState.IsValid)
             {
@@ -41,12 +41,12 @@ namespace HairdresserApp.Controllers
 
         public async Task<IActionResult> Edit(int id)
         {
-            var location = await _context.Locations.FirstOrDefaultAsync(x=>x.Id == id);
+            var location = await _context.Locations.FirstOrDefaultAsync(x => x.Id == id);
             return View(location);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(int id, [Bind("Id, Name, Address")] Location location)
+        public async Task<IActionResult> Edit(int id, [Bind("Id, Name, Address, OpeningTime, ClosingTime")] Location location)
         {
             if (ModelState.IsValid)
             {

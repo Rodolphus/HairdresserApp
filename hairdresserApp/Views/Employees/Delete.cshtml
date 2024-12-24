@@ -1,11 +1,11 @@
 ﻿@model HairdresserApp.Models.Employee
 @{
-	ViewData["Title"] = "Şube Sil";
+	ViewData["Title"] = "Çalışan Sil";
 }
 
-<h3>Şube Sil</h3>
+<h3>Çalışan Sil</h3>
 
-<p>@Model.Location.?Name şubenizdeki @Model.FirstName @Model.LastName isimli çalışanınızı silmek istediğinize emin misiniz?</p>
+<p>@Model.FirstName @Model.LastName isimli çalışanı silmek istediğinize emin misiniz?</p>
 
 <form asp-action="Delete" method="post">
 	<input type="hidden" asp-for="Id"/>

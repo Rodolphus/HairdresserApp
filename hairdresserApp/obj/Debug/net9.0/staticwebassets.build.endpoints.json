@@ -3,304 +3,6 @@
   "ManifestType": "Build",
   "Endpoints": [
     {
-      "Route": "HairdresserApp.g6hag5xviu.styles.css",
-      "AssetFile": "HairdresserApp.styles.css.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.001834862385"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "544"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ev8v0pHInki3nanDO3i3GUGPNYgY0VzvpDFfonpLxQA=\""
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"eImLEEmv3lBfT4PfNMY+r89DXo9qB8PHb6ovgXkBu1o=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 23 Dec 2024 03:30:30 GMT"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "g6hag5xviu"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-eImLEEmv3lBfT4PfNMY+r89DXo9qB8PHb6ovgXkBu1o="
-        },
-        {
-          "Name": "label",
-          "Value": "HairdresserApp.styles.css"
-        }
-      ]
-    },
-    {
-      "Route": "HairdresserApp.g6hag5xviu.styles.css",
-      "AssetFile": "HairdresserApp.styles.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1132"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"eImLEEmv3lBfT4PfNMY+r89DXo9qB8PHb6ovgXkBu1o=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 23 Dec 2024 03:30:30 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "g6hag5xviu"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-eImLEEmv3lBfT4PfNMY+r89DXo9qB8PHb6ovgXkBu1o="
-        },
-        {
-          "Name": "label",
-          "Value": "HairdresserApp.styles.css"
-        }
-      ]
-    },
-    {
-      "Route": "HairdresserApp.g6hag5xviu.styles.css.gz",
-      "AssetFile": "HairdresserApp.styles.css.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "544"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ev8v0pHInki3nanDO3i3GUGPNYgY0VzvpDFfonpLxQA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 23 Dec 2024 03:30:30 GMT"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "g6hag5xviu"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-ev8v0pHInki3nanDO3i3GUGPNYgY0VzvpDFfonpLxQA="
-        },
-        {
-          "Name": "label",
-          "Value": "HairdresserApp.styles.css.gz"
-        }
-      ]
-    },
-    {
-      "Route": "HairdresserApp.styles.css",
-      "AssetFile": "HairdresserApp.styles.css.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.001834862385"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "544"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ev8v0pHInki3nanDO3i3GUGPNYgY0VzvpDFfonpLxQA=\""
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"eImLEEmv3lBfT4PfNMY+r89DXo9qB8PHb6ovgXkBu1o=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 23 Dec 2024 03:30:30 GMT"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-eImLEEmv3lBfT4PfNMY+r89DXo9qB8PHb6ovgXkBu1o="
-        }
-      ]
-    },
-    {
-      "Route": "HairdresserApp.styles.css",
-      "AssetFile": "HairdresserApp.styles.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1132"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"eImLEEmv3lBfT4PfNMY+r89DXo9qB8PHb6ovgXkBu1o=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 23 Dec 2024 03:30:30 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-eImLEEmv3lBfT4PfNMY+r89DXo9qB8PHb6ovgXkBu1o="
-        }
-      ]
-    },
-    {
-      "Route": "HairdresserApp.styles.css.gz",
-      "AssetFile": "HairdresserApp.styles.css.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "544"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ev8v0pHInki3nanDO3i3GUGPNYgY0VzvpDFfonpLxQA=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 23 Dec 2024 03:30:30 GMT"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-ev8v0pHInki3nanDO3i3GUGPNYgY0VzvpDFfonpLxQA="
-        }
-      ]
-    },
-    {
       "Route": "Identity/css/site.css",
       "AssetFile": "Identity/css/site.css",
       "Selectors": [],
@@ -9424,6 +9126,304 @@
         {
           "Name": "integrity",
           "Value": "sha256-jcY0RXFOlcp4VNTCcYQtWVZZBlr+ZY+AOv6/0S5dnF8="
+        }
+      ]
+    },
+    {
+      "Route": "hairdresserApp.ra4zzinxl6.styles.css",
+      "AssetFile": "hairdresserApp.styles.css.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001838235294"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "543"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"avwXGxaE6JB42i7vzIYAGtLw5VvwkZ3OV/1l1YfCU4s=\""
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"fcTojvJCHO31y3qM8AEi2fgCmkN36f0sBteE1jd5ngk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 04:47:18 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ra4zzinxl6"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-fcTojvJCHO31y3qM8AEi2fgCmkN36f0sBteE1jd5ngk="
+        },
+        {
+          "Name": "label",
+          "Value": "hairdresserApp.styles.css"
+        }
+      ]
+    },
+    {
+      "Route": "hairdresserApp.ra4zzinxl6.styles.css",
+      "AssetFile": "hairdresserApp.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1132"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fcTojvJCHO31y3qM8AEi2fgCmkN36f0sBteE1jd5ngk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 04:47:18 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ra4zzinxl6"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-fcTojvJCHO31y3qM8AEi2fgCmkN36f0sBteE1jd5ngk="
+        },
+        {
+          "Name": "label",
+          "Value": "hairdresserApp.styles.css"
+        }
+      ]
+    },
+    {
+      "Route": "hairdresserApp.ra4zzinxl6.styles.css.gz",
+      "AssetFile": "hairdresserApp.styles.css.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "543"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"avwXGxaE6JB42i7vzIYAGtLw5VvwkZ3OV/1l1YfCU4s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 04:47:18 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ra4zzinxl6"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-avwXGxaE6JB42i7vzIYAGtLw5VvwkZ3OV/1l1YfCU4s="
+        },
+        {
+          "Name": "label",
+          "Value": "hairdresserApp.styles.css.gz"
+        }
+      ]
+    },
+    {
+      "Route": "hairdresserApp.styles.css",
+      "AssetFile": "hairdresserApp.styles.css.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001838235294"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "543"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"avwXGxaE6JB42i7vzIYAGtLw5VvwkZ3OV/1l1YfCU4s=\""
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"fcTojvJCHO31y3qM8AEi2fgCmkN36f0sBteE1jd5ngk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 04:47:18 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fcTojvJCHO31y3qM8AEi2fgCmkN36f0sBteE1jd5ngk="
+        }
+      ]
+    },
+    {
+      "Route": "hairdresserApp.styles.css",
+      "AssetFile": "hairdresserApp.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1132"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fcTojvJCHO31y3qM8AEi2fgCmkN36f0sBteE1jd5ngk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 04:47:18 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fcTojvJCHO31y3qM8AEi2fgCmkN36f0sBteE1jd5ngk="
+        }
+      ]
+    },
+    {
+      "Route": "hairdresserApp.styles.css.gz",
+      "AssetFile": "hairdresserApp.styles.css.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "543"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"avwXGxaE6JB42i7vzIYAGtLw5VvwkZ3OV/1l1YfCU4s=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 24 Dec 2024 04:47:18 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-avwXGxaE6JB42i7vzIYAGtLw5VvwkZ3OV/1l1YfCU4s="
         }
       ]
     },
