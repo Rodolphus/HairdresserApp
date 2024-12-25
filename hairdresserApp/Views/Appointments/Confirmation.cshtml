@@ -1,0 +1,15 @@
+﻿@model HairdresserApp.Models.Appointment
+@{
+	ViewData["Title"] = "Randevu Onayla";
+}
+
+<h3>Randevu Onayla</h3>
+
+<p>
+	@Model.User.FirstName @Model.User.LastName (@Model.User.Email) kullanıcısının @Model.AppointmentDate tarihindeki randevusunu onaylamak veya onayı iptal etmek istediğinize emin misiniz?</p>
+
+<form asp-action="Confirmation" method="post">
+	<input type="hidden" asp-for="Id"/>
+	<input type="submit" class="btn btn-primary" value="Confirm" />
+	<a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

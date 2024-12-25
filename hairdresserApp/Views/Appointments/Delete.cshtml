@@ -1,0 +1,15 @@
+﻿@model HairdresserApp.Models.Appointment
+@{
+	ViewData["Title"] = "Randevu Sil";
+}
+
+<h3>Randevu Sil</h3>
+
+<p>
+	@Model.User.FirstName @Model.User.LastName (@Model.User.Email) kullanıcısının @Model.AppointmentDate tarihindeki randevusunu silmek istediğinize emin misiniz?</p>
+
+<form asp-action="Delete" method="post">
+	<input type="hidden" asp-for="Id"/>
+	<input type="submit" class="btn btn-danger" value="Delete"/>
+	<a asp-action="Index" class="btn btn-primary">Cancel</a>
+</form>

@@ -10,7 +10,6 @@
 <table class="table">
 	<thead>
 		<tr>
-			<th>Id</th>
 			<th>Oluşturma Zamanı</th>
 			<th>Hizmeti Alacak Kişi</th>
 			<th>Randevu Zamanı</th>
@@ -25,7 +24,6 @@
 		@foreach (var appointment in Model)
 		{
 			<tr>
-				<td>@appointment.Id</td>
 				<td>@appointment.CreatedDate</td>
 				<td>@appointment.User.FirstName @appointment.User.LastName<br>@appointment.User.Email</td>
 				<td>@appointment.AppointmentDate</td>
@@ -33,10 +31,11 @@
 				<td>@appointment.Employee.Location.Name</td>
 				<td>@appointment.Employee.FirstName @appointment.Employee.LastName</td>
 				<td>@appointment.Confirmed</td>
-				@*<td>
-					<a asp-action="Edit" asp-route-id="@service.Id">Düzenle</a>
-					<a asp-action="Delete" asp-route-id="@service.Id">Sil</a>
-				</td>*@
+				<td>
+					<a asp-action="Confirmation" asp-route-id="@appointment.Id">Onay</a>
+					<a asp-action="Edit" asp-route-id="@appointment.Id">Düzenle</a>
+					<a asp-action="Delete" asp-route-id="@appointment.Id">Sil</a>
+				</td>
 			</tr>
 		}
 	</tbody>
