@@ -17,16 +17,16 @@ namespace HairdresserApp.Controllers
         }
 
         [HttpGet("available-times/{employeeId}/{serviceId}/{selectedDate}")]
-        public IActionResult GetAvailableTimes(int employeeId, int serviceId, DateTime selectedDate)
+        public async Task<IActionResult> GetAvailableTimes(int employeeId, int serviceId, DateTime selectedDate)
         {
-            var employee = _context.Employees
+            var employee = await _context.Employees
                                    .Include(e => e.Location)
-                                   .FirstOrDefault(e => e.Id == employeeId);
+                                   .FirstOrDefaultAsync(e => e.Id == employeeId);
 
             if (employee == null)
                 return NotFound(new { Message = "Çalışan bilgisi bulunamadı." });
 
-            var service = _context.Services.FirstOrDefault(s => s.Id == serviceId);
+            var service = await _context.Services.FirstOrDefaultAsync(s => s.Id == serviceId);
 
             if (service == null)
                 return NotFound(new { Message = "Hizmet bilgisi bulunamadı." });
@@ -34,14 +34,14 @@ namespace HairdresserApp.Controllers
             var openingTime = employee.Location.OpeningTime;
             var closingTime = employee.Location.ClosingTime;
 
-            var existingAppointments = _context.Appointments
+            var existingAppointments = await _context.Appointments
                                         .Where(a => a.EmployeeId == employeeId && a.AppointmentDate.Date == selectedDate.Date)
                                         .Select(a => new
                                         {
                                             StartTime = a.AppointmentDate.TimeOfDay,
                                             EndTime = a.AppointmentDate.TimeOfDay.Add(TimeSpan.FromMinutes(a.Service.ProcessTimeInMinutes))
                                         })
-                                        .ToList();
+                                        .ToListAsync();
 
             var availableSlots = new List<object>();
 

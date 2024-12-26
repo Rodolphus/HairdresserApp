@@ -4,6 +4,8 @@ using HairdresserApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using HairdresserApp.Areas.Identity.Data;
+using Microsoft.AspNetCore.Identity;
 
 namespace HairdresserApp.Controllers
 {
@@ -11,9 +13,11 @@ namespace HairdresserApp.Controllers
     public class AppointmentsController : Controller
     {
         private readonly HairdresserAppContext _context;
-        public AppointmentsController(HairdresserAppContext context)
+        private readonly UserManager<HairdresserAppUser> _userManager;
+        public AppointmentsController(HairdresserAppContext context, UserManager<HairdresserAppUser> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         public async Task<IActionResult> Index()
@@ -21,8 +25,22 @@ namespace HairdresserApp.Controllers
             var appointment = await _context.Appointments
                                         .Include(s => s.Service)
                                         .Include(e => e.Employee)
-                                        .ThenInclude(e => e.Location)
+                                        .Include(l => l.Location)
                                         .Include(u => u.User)
+                                        .ToListAsync();
+
+            return View(appointment);
+        }
+
+        public async Task<IActionResult> IndexForUser()
+        {
+            var userId = _userManager.GetUserId(this.User);
+            var appointment = await _context.Appointments
+                                        .Include(s => s.Service)
+                                        .Include(e => e.Employee)
+                                        .Include(l => l.Location)
+                                        .Include(u => u.User)
+                                        .Where(a => a.UserId == userId)
                                         .ToListAsync();
 
             return View(appointment);
@@ -37,12 +55,13 @@ namespace HairdresserApp.Controllers
             );
             ViewData["Services"] = new SelectList(_context.Services, "Id", "Name");
             ViewData["Locations"] = new SelectList(_context.Locations, "Id", "Name");
+            ViewData["UserId"] = _userManager.GetUserId(this.User);
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id, ServiceId, EmployeeId, UserId, AppointmentDate")] Appointment appointment)
+        public async Task<IActionResult> Create([Bind("Id, ServiceId, LocationId, EmployeeId, UserId, AppointmentDate")] Appointment appointment)
         {
             if (ModelState.IsValid)
             {
@@ -113,7 +132,7 @@ namespace HairdresserApp.Controllers
             var appointment = await _context.Appointments
                                             .Include(s => s.Service)
                                             .Include(e => e.Employee)
-                                            .ThenInclude(e => e.Location)
+                                            .Include(l => l.Location)
                                             .Include(u => u.User)
                                             .FirstOrDefaultAsync(x => x.Id == id);
 
@@ -130,7 +149,7 @@ namespace HairdresserApp.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id, ServiceId, EmployeeId, UserId, AppointmentDate")] Appointment appointment)
+        public async Task<IActionResult> Edit(int id, [Bind("Id, ServiceId, LocationId, EmployeeId, UserId, AppointmentDate")] Appointment appointment)
         {  
             if (ModelState.IsValid)
             {

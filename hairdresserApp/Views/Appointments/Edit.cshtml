@@ -20,7 +20,7 @@
 	</div>
 	<div class="form-group">
 		<label for="LocationId">Location</label>
-        <select id="LocationId" asp-items="ViewBag.Locations" class="form-control"></select>
+        <select asp-for="LocationId" asp-items="ViewBag.Locations" class="form-control"></select>
 	</div>
     <div class="form-group">
         <label for="EmployeeId">Employee</label>
@@ -45,7 +45,7 @@
     const employeeDropdown = document.getElementById("EmployeeId");
     const timeSlotDropdown = document.getElementById("AppointmentDate");
 
-    function updateEmployees() {
+    async function updateEmployees() {
         const locationId = locationDropdown.value;
         const serviceId = serviceDropdown.value;
 
@@ -54,7 +54,7 @@
             return;
         }
 
-        fetch(`/api/employees/by-location-and-service/${locationId}/${serviceId}`)
+        await fetch(`/api/employees/by-location-and-service/${locationId}/${serviceId}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error("Çalışan bilgileri alınamadı.");
@@ -81,7 +81,7 @@
             });
     }
 
-    function updateAvailableTimes() {
+    async function updateAvailableTimes() {
         const selectedDate = dateInput.value;
         const serviceId = serviceDropdown.value;
         const employeeId = employeeDropdown.value;
@@ -91,7 +91,7 @@
             return;
         }
 
-        fetch(`/api/appointments/available-times/${employeeId}/${serviceId}/${selectedDate}`)
+        await fetch(`/api/appointments/available-times/${employeeId}/${serviceId}/${selectedDate}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error("Uygun saatler alınamadı.");
@@ -125,13 +125,27 @@
             });
     }
 
-    dateInput.addEventListener("change", updateAvailableTimes);
-    locationDropdown.addEventListener("change", updateEmployees);
-    locationDropdown.addEventListener("change", updateAvailableTimes);
-    serviceDropdown.addEventListener("change", updateEmployees);
-    serviceDropdown.addEventListener("change", updateAvailableTimes);
-    employeeDropdown.addEventListener("change", updateAvailableTimes);
+    document.addEventListener("DOMContentLoaded", async () => {
+        await updateEmployees();
+        await updateAvailableTimes();
+    });
 
-    document.addEventListener("DOMContentLoaded", updateEmployees);
-    document.addEventListener("DOMContentLoaded", updateAvailableTimes);
+    dateInput.addEventListener("change", async () => {
+        await updateEmployees();
+        await updateAvailableTimes();
+    });
+
+    locationDropdown.addEventListener("change", async () => {
+        await updateEmployees();
+        await updateAvailableTimes();
+    });
+
+    serviceDropdown.addEventListener("change", async () => {
+        await updateEmployees();
+        await updateAvailableTimes();
+    });
+
+    employeeDropdown.addEventListener("change", async () => {
+        await updateAvailableTimes();
+    });
 </script>

@@ -28,12 +28,12 @@
 				<td>@appointment.User.FirstName @appointment.User.LastName<br>@appointment.User.Email</td>
 				<td>@appointment.AppointmentDate</td>
 				<td>@appointment.Service.Name<br>@appointment.Service.ProcessTimeInMinutes dk<br>@appointment.Service.Price TL</td>
-				<td>@appointment.Employee.Location.Name</td>
+				<td>@appointment.Location.Name</td>
 				<td>@appointment.Employee.FirstName @appointment.Employee.LastName</td>
 				<td>@appointment.Confirmed</td>
 				<td>
-					<a asp-action="Confirmation" asp-route-id="@appointment.Id">Onay</a>
-					<a asp-action="Edit" asp-route-id="@appointment.Id">Düzenle</a>
+					<a asp-action="Confirmation" asp-route-id="@appointment.Id">Onay / Onay İptal</a><br />
+					<a asp-action="Edit" asp-route-id="@appointment.Id">Düzenle</a><br />
 					<a asp-action="Delete" asp-route-id="@appointment.Id">Sil</a>
 				</td>
 			</tr>

@@ -4,6 +4,7 @@ using HairdresserApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HairdresserApp.Migrations
 {
     [DbContext(typeof(HairdresserAppContext))]
-    partial class HairdresserAppContextModelSnapshot : ModelSnapshot
+    [Migration("20241226173916_LocationAddedToAppointments")]
+    partial class LocationAddedToAppointments
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

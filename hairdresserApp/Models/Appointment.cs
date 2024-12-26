@@ -13,6 +13,10 @@ namespace HairdresserApp.Models
 
         [ForeignKey("ServiceId")]
         public Service? Service { get; set; }
+        public int LocationId { get; set; }
+
+        [ForeignKey("LocationId")]
+        public Location? Location { get; set; }
         public int EmployeeId { get; set; }
 
         [ForeignKey("EmployeeId")]
