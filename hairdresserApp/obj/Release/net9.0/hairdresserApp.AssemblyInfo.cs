@@ -12,12 +12,12 @@ using System;
 using System.Reflection;
 
 [assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
-[assembly: System.Reflection.AssemblyCompanyAttribute("HairdresserApp")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("hairdresserApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+238f9b4b4c6a99f7317a73b8a1f5d71e8e70a0db")]
-[assembly: System.Reflection.AssemblyProductAttribute("HairdresserApp")]
-[assembly: System.Reflection.AssemblyTitleAttribute("HairdresserApp")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6d6f10c050527eadbffb5673803a8bba2e9a3cf5")]
+[assembly: System.Reflection.AssemblyProductAttribute("hairdresserApp")]
+[assembly: System.Reflection.AssemblyTitleAttribute("hairdresserApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // MSBuild WriteCodeFragment sınıfı tarafından oluşturuldu.

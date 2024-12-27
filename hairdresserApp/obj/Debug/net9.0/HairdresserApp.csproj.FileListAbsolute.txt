@@ -328,6 +328,8 @@ C:\Users\mehmet\source\repos\hairdresserApp\HairdresserApp\obj\Debug\net9.0\comp
 C:\Users\mehmet\source\repos\hairdresserApp\HairdresserApp\obj\Debug\net9.0\compressed\v0zgfp0y55-87fc7y1x7t.gz
 C:\Users\mehmet\source\repos\hairdresserApp\HairdresserApp\obj\Debug\net9.0\compressed\yfc7ypekbg-mlv21k5csn.gz
 C:\Users\mehmet\source\repos\hairdresserApp\HairdresserApp\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Users\mehmet\source\repos\hairdresserApp\HairdresserApp\bin\Debug\net9.0\Microsoft.OpenApi.dll
+C:\Users\mehmet\source\repos\hairdresserApp\HairdresserApp\bin\Debug\net9.0\OpenAI.dll
 C:\Users\mehmet\source\repos\hairdresserApp\HairdresserApp\obj\Debug\net9.0\compressed\f4mly2bz2m-b9sayid5wm.gz
 C:\Users\mehmet\source\repos\hairdresserApp\HairdresserApp\obj\Debug\net9.0\compressed\wzzj2xf4qc-61n19gt1b8.gz
 C:\Users\mehmet\source\repos\hairdresserApp\HairdresserApp\obj\Debug\net9.0\compressed\s8xvhgeh7j-xtxxf3hu2r.gz

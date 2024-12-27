@@ -72,9 +72,17 @@
               "target": "Package",
               "version": "[9.0.0, )"
             },
+            "Microsoft.OpenApi": {
+              "target": "Package",
+              "version": "[1.6.23, )"
+            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[9.0.0, )"
+            },
+            "OpenAI": {
+              "target": "Package",
+              "version": "[2.1.0, )"
             }
           },
           "imports": [
