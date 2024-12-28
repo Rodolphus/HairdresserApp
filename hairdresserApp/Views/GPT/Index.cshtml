@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Saç Modeli Önerisi";
+}
+
+<br />
+<h3>GPT SAÇ MODEL ÖNERİSİ</h3>
+<br />
+
+<form method="post" enctype="multipart/form-data" action="/GPT/Result/">
+    <label for="file">Yüz ve saçınızın bulunduğu bir görseli yükleyerek saç modeli önerisi alabilirsiniz.</label>
+    <input type="file" name="file" id="file" accept="image/*" /><br /><br />
+    <button class="btn btn-m btn-primary" type="submit">Görsel Yükle</button>
+</form>
+
+@if (ViewBag.ImagePreview != null)
+{
+    <br />
+    <img src="@ViewBag.ImagePreview" alt="Yüklenen Görsel" style="max-width: 100px;" />
+    <br />
+    <br />
+    <h6>GPT Önerisi:</h6>
+    <p>@ViewBag.Response</p>
+}

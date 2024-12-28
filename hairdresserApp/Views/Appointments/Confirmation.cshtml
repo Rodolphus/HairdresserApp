@@ -3,13 +3,14 @@
 	ViewData["Title"] = "Randevu Onayla";
 }
 
-<h3>Randevu Onayla</h3>
+<br />
+<h3>RANDEVU ONAYLA</h3>
+<br />
 
-<p>
-	@Model.User.FirstName @Model.User.LastName (@Model.User.Email) kullanıcısının @Model.AppointmentDate tarihindeki randevusunu onaylamak veya onayı iptal etmek istediğinize emin misiniz?</p>
+<p>@Model.AppointmentDate tarihindeki randevuyu onaylamak veya onayı iptal etmek istediğinize emin misiniz?</p>
 
 <form asp-action="Confirmation" method="post">
 	<input type="hidden" asp-for="Id"/>
-	<input type="submit" class="btn btn-primary" value="Confirm" />
-	<a asp-action="Index" class="btn btn-secondary">Cancel</a>
+	<input type="submit" class="btn btn-primary" value="Onay / Onay İptal" />
+	<a asp-action="Index" class="btn btn-secondary">İptal</a>
 </form>

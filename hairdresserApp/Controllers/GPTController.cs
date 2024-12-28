@@ -1,14 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Text.Json;
 using System.Text;
+using Microsoft.AspNetCore.Authorization;
 
 namespace HairdresserApp.Controllers
 {
-    [Route("api/gpt")]
-    public class GPTApiController : Controller
+    [Authorize]
+    public class GPTController : Controller
     {
         private const string ApiUrl = "https://api.openai.com/v1/chat/completions";
-        private const string ApiKey = "YOUR_KEY";
+        private const string ApiKey = "KEY";
 
         public IActionResult Index()
         {
@@ -16,15 +17,13 @@ namespace HairdresserApp.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> GetResult(IFormFile file)
+        public async Task<IActionResult> Result(IFormFile file)
         {
             if (file == null || file.Length == 0)
             {
-                ViewBag.Response = "Lütfen bir görsel yükleyin.";
                 return View("Index");
             }
 
-            
             string base64Image;
             using (var memoryStream = new MemoryStream())
             {
@@ -32,14 +31,13 @@ namespace HairdresserApp.Controllers
                 base64Image = Convert.ToBase64String(memoryStream.ToArray());
             }
 
-            
             string gptResponse;
             try
             {
                 using var httpClient = new HttpClient();
                 httpClient.DefaultRequestHeaders.Add("Authorization", $"Bearer {ApiKey}");
 
-                var prompt = "İlettiğim görseldeki kişinin yüz şekline ve saç yapısına uygun 3 farklı saç modeli önerisi yap. Cevap olarak 1. ve 2. saç önerisi diye direk cevap ver.";
+                var prompt = "İlettiğim görseldeki kişinin yüz şekline ve saç yapısına uygun 3 farklı saç modeli önerisi yap. Cevap olarak direk 1. ve 2. saç önerisi diye cevabına başla.";
 
                 var requestBody = new
                 {
@@ -72,11 +70,9 @@ namespace HairdresserApp.Controllers
             }
             catch (HttpRequestException ex)
             {
-                ViewBag.Response = $"GPT API'ye erişilirken bir hata oluştu: {ex.Message}";
                 return View("Index");
             }
 
-            
             ViewBag.ImagePreview = $"data:{file.ContentType};base64,{base64Image}";
             ViewBag.Response = gptResponse;
 

@@ -3,13 +3,15 @@
 	ViewData["Title"] = "Şube Sil";
 }
 
-<h3>Şube Sil</h3>
+<br />
+<h3>ŞUBE SİL</h3>
+<br />
 
 <p>@Model.Address adresindeki @Model.Name şubenizi silmek istediğinize emin misiniz? 
-	Şube silindiğinde şubeye bağlı çalışanlarda silinecektir.</p>
+	Şube silindiğinde şubeye bağlı çalışanlar şubesiz kalacaktır.</p>
 
 <form asp-action="Delete" method="post">
 	<input type="hidden" asp-for="Id"/>
-	<input type="submit" class="btn btn-danger" value="Delete"/>
-	<a asp-action="Index" class="btn btn-primary">Cancel</a>
+	<input type="submit" class="btn btn-danger" value="Sil"/>
+	<a asp-action="Index" class="btn btn-primary">İptal</a>
 </form>

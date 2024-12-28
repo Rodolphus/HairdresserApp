@@ -3,39 +3,58 @@
 	ViewData["Title"] = "Randevu Ekle";
 }
 
-<h3>Randevu Ekle</h3>
+<br />
+<h3>RANDEVU EKLE</h3>
+<br />
 
 <form asp-action="Create" method="post">
-    <div class="form-group">
-        <label for="Date">Date</label>
+    <div class="form-group mb-2">
+        <label for="Date">Tarih</label>
         <input id="Date" type="date" class="form-control" min="@DateTime.Now.ToString("yyyy-MM-dd")" value="@DateTime.Now.ToString("yyyy-MM-dd")" />
     </div>
-    <div class="form-group">
-        <label for="UserId">User</label>
-        <select asp-for="UserId" asp-items="ViewBag.Users" class="form-control"></select>
-    </div>
-	<div class="form-group">
-        <label for="ServiceId">Service</label>
+    @if (User.IsInRole("Admin"))
+    {
+        <div class="form-group mb-2">
+            <label for="UserId">Müşteri</label>
+            <select asp-for="UserId" asp-items="ViewBag.Users" class="form-control"></select>
+        </div>
+    }
+    else
+    {
+        <div class="form-group d-none">
+            <label for="UserId">Müşteri</label>
+            <select asp-for="UserId" asp-items="ViewBag.Users" class="form-control"></select>
+        </div>
+    }
+    <div class="form-group mb-2">
+        <label for="ServiceId">Hizmet</label>
         <select asp-for="ServiceId" asp-items="ViewBag.Services" class="form-control"></select>
 	</div>
-	<div class="form-group">
-		<label for="LocationId">Location</label>
+    <div class="form-group mb-2">
+		<label for="LocationId">Şube</label>
         <select asp-for="LocationId" asp-items="ViewBag.Locations" class="form-control"></select>
 	</div>
-    <div class="form-group">
-        <label for="EmployeeId">Employee</label>
+    <div class="form-group mb-2">
+        <label for="EmployeeId">Personel</label>
         <select asp-for="EmployeeId" name="EmployeeId" class="form-control">
             <option value="">Lütfen şube ve hizmet seçiniz.</option>
         </select>
     </div>
-    <div class="form-group">
-        <label for="AppointmentDate">Available Time Slots</label>
+    <div class="form-group mb-3">
+        <label for="AppointmentDate">Uygun Saatler</label>
         <select asp-for="AppointmentDate" name="AppointmentDate" class="form-control">
             <option value="">Lütfen gün, şube ve hizmet seçiniz.</option>
         </select>
     </div>
-	<button type="submit" class="btn btn-primary">Submit</button>
-	<a asp-action="Index" class="btn btn-secondary">Cancel</a>
+	<button type="submit" class="btn btn-primary">Ekle</button>
+    @if (User.IsInRole("Admin"))
+    {
+        <a asp-action="Index" class="btn btn-secondary">İptal</a>
+    }
+    else
+    {
+        <a asp-action="MyAppointments" class="btn btn-secondary">İptal</a>
+    }
 </form>
 
 <script>

@@ -76,6 +76,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/mehmet/source/repos/hairdresserApp/HairdresserApp/Views/Appointments/MyAppointments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXBwb2ludG1lbnRzXE15QXBwb2ludG1lbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/mehmet/source/repos/hairdresserApp/HairdresserApp/Views/Employees/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -92,8 +96,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/mehmet/source/repos/hairdresserApp/HairdresserApp/Views/GPTApi/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR1BUQXBpXEluZGV4LmNzaHRtbA==
+[C:/Users/mehmet/source/repos/hairdresserApp/HairdresserApp/Views/GPT/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR1BUXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/mehmet/source/repos/hairdresserApp/HairdresserApp/Views/Home/Index.cshtml]

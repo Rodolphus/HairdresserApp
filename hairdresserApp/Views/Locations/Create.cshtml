@@ -3,25 +3,27 @@
 	ViewData["Title"] = "Şube Ekle";
 }
 
-<h3>Şube Ekle</h3>
+<br />
+<h3>ŞUBE EKLE</h3>
+<br />
 
 <form asp-action="Create" method="post">
-	<div class="form-group">
-		<label for="Name">Name</label>
+	<div class="form-group mb-2">
+		<label for="Name">Açıklama</label>
 		<input type="text" class="form-control" asp-for="Name" />
 	</div>
-	<div class="form-group">
-		<label for="Address">Address</label>
+	<div class="form-group mb-2">
+		<label for="Address">Adres</label>
 		<input type="text" class="form-control" asp-for="Address" />
 	</div>
-	<div class="form-group">
-		<label for="OpeningTime">Opening Time</label>
+	<div class="form-group mb-2">
+		<label for="OpeningTime">Açılış Saati</label>
 		<input type="time" class="form-control" asp-for="OpeningTime" step="1800" />
 	</div>
-	<div class="form-group">
-		<label for="ClosingTime">Closing Time</label>
+	<div class="form-group mb-3">
+		<label for="ClosingTime">Kapanış Saati</label>
 		<input type="time" class="form-control" asp-for="ClosingTime" step="1800" />
 	</div>
-	<button type="submit" class="btn btn-primary">Submit</button>
-	<a asp-action="Index" class="btn btn-secondary">Cancel</a>
+	<button type="submit" class="btn btn-primary">Ekle</button>
+	<a asp-action="Index" class="btn btn-secondary">İptal</a>
 </form>

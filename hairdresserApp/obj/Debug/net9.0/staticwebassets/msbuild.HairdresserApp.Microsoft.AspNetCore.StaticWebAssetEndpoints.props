@@ -28,13 +28,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\HairdresserApp.g6hag5xviu.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-eImLEEmv3lBfT4PfNMY\u002Br89DXo9qB8PHb6ovgXkBu1o="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1132"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022eImLEEmv3lBfT4PfNMY\u002Br89DXo9qB8PHb6ovgXkBu1o=\u0022"},{"Name":"Last-Modified","Value":"Fri, 27 Dec 2024 19:34:48 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"1132"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022eImLEEmv3lBfT4PfNMY\u002Br89DXo9qB8PHb6ovgXkBu1o=\u0022"},{"Name":"Last-Modified","Value":"Sat, 28 Dec 2024 16:06:27 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/HairdresserApp/HairdresserApp.g6hag5xviu.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\HairdresserApp.g6hag5xviu.bundle.scp.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"g6hag5xviu"},{"Name":"integrity","Value":"sha256-eImLEEmv3lBfT4PfNMY\u002Br89DXo9qB8PHb6ovgXkBu1o="},{"Name":"label","Value":"_content/HairdresserApp/HairdresserApp.bundle.scp.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1132"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022eImLEEmv3lBfT4PfNMY\u002Br89DXo9qB8PHb6ovgXkBu1o=\u0022"},{"Name":"Last-Modified","Value":"Fri, 27 Dec 2024 19:34:48 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1132"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022eImLEEmv3lBfT4PfNMY\u002Br89DXo9qB8PHb6ovgXkBu1o=\u0022"},{"Name":"Last-Modified","Value":"Sat, 28 Dec 2024 16:06:27 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/HairdresserApp/js/site.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))</AssetFile>

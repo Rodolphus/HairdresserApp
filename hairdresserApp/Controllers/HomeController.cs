@@ -19,8 +19,15 @@ namespace HairdresserApp.Controllers
             _userManager = userManager;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            var user = await _userManager.GetUserAsync(this.User);
+
+            if (await _userManager.IsInRoleAsync(user, "User"))
+            {
+                return RedirectToAction("MyAppointments", "Appointments");
+            }
+
             return View();
         }
 

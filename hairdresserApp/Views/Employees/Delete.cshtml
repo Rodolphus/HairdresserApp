@@ -1,14 +1,16 @@
 ﻿@model HairdresserApp.Models.Employee
 @{
-	ViewData["Title"] = "Çalışan Sil";
+	ViewData["Title"] = "Personel Sil";
 }
 
-<h3>Çalışan Sil</h3>
+<br />
+<h3>PERSONEL SİL</h3>
+<br />
 
 <p>@Model.FirstName @Model.LastName isimli çalışanı silmek istediğinize emin misiniz?</p>
 
 <form asp-action="Delete" method="post">
 	<input type="hidden" asp-for="Id"/>
-	<input type="submit" class="btn btn-danger" value="Delete"/>
-	<a asp-action="Index" class="btn btn-primary">Cancel</a>
+	<input type="submit" class="btn btn-danger" value="Sil"/>
+	<a asp-action="Index" class="btn btn-primary">İptal</a>
 </form>

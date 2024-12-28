@@ -3,10 +3,11 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <a asp-area="" asp-controller="Locations" asp-action="Index">Şubeler</a>
-    <a asp-area="" asp-controller="Services" asp-action="Index">Hizmetler</a>
-    <a asp-area="" asp-controller="Employees" asp-action="Index">Çalışanlar</a>
-    <a asp-area="" asp-controller="Appointments" asp-action="Index">Randevular</a>
-    <a asp-area="" asp-controller="GPTApi" asp-action="Index">GPT</a>
+    <br />
+    <h2 class="display-4">YÖNETİM PANELİ</h2>
+    <a class="btn btn-l btn-success m-2" asp-controller="Appointments" asp-action="Index">Randevular</a>
+    <a class="btn btn-l btn-primary m-2" asp-controller="Locations" asp-action="Index">Şubeler</a>
+    <a class="btn btn-l btn-info m-2" asp-controller="Employees" asp-action="Index">Personeller</a>
+    <a class="btn btn-l btn-warning m-2" asp-controller="Services" asp-action="Index">Hizmetler</a>
+    <a class="btn btn-l btn-secondary m-2" asp-controller="GPT" asp-action="Index">GPT Saç Modeli</a>
 </div>
